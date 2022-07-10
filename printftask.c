@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * printf - Starting point
+ * _printf - Starting point
  * Description: output according to a format
  * @format: format
- * Return: number of characters printed 
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
@@ -26,8 +26,7 @@ int _printf(const char *format, ...)
 		for (; format[i] != '%' && format[i] != '\0'; *index += 1, i++)
 		{
 			if (*index == 1024)
-			{
-				_write_buffer(buffer, index);
+			{	_write_buffer(buffer, index);
 				reset_buffer(buffer);
 				*index = 0;
 			}
@@ -36,13 +35,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '\0')
 			break;
 		if (format[i] == '%')
-		{
-			i++;
+		{	i++;
 			for (j = 0; spec[j].tp != '\0'; j++)
 			{
 				if (format[i] == spec[j].tp)
-				{
-					spec[j].f(valist, buffer, index);
+				{	spec[j].f(valist, buffer, index);
 					break;
 				}
 			}
