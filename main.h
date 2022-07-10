@@ -14,7 +14,6 @@ typedef struct print
 	int (*f)(va_list);
 } print_t;
 
-static int (*check_for_specifiers(const char *format))(va_list);
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_c(va_list c);
