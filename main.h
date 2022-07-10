@@ -1,5 +1,6 @@
-#ifndef MMAIN.H
+#ifndef MAIN.H
 #define MAIN.H
+
 #include <stdarg.h>
 #include <stdio.h>
 /**
@@ -30,4 +31,7 @@ typedef struct printHandler
 int _putchar(char c);
 int _puts(char *str);
 int _printf(const char *format, ...);
+int (*get_print(char s))(va_list, flags_t *);
+int get_flag(char s, flags_t *f);
+
 #endif
