@@ -25,8 +25,7 @@ static int (*check_for_specifiers(const char *format))(va_list)
 	return (p[i].f);
 }
 /**
- * _printf - Starting point
- * Description: output according to a format
+ * _printf - output according to a format
  * @format: format
  * Return: number of characters printed
  */
