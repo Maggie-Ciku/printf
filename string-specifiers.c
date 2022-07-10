@@ -2,49 +2,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * format_s - specificer s
- * @valist: valist
- * @buffer: buffer
- * @index: index
- * Return: void
+ * print_s - prints a string
+ * @s: string to print
+ * Return: number of chars printed
  */
-void format_s(va_list valist, char *buffer, int *index)
+int print_s(va_list s)
 {
-	int i, j;
-	char *s;
+	int count;
+	char *str = va_arg(s, char *);
 
-	s = va_arg(valist, char*);
-	if (s == NULL)
-		s = "(null)";
-	for (i = *index, j = 0; s[j] != '\0';  *index += 1, i++, j++)
+	if (str == NULL)
+		str = "(null)";
+	for (count = 0; str[count]; count++)
 	{
-		if (*index == 1024)
-		{
-			_write_buffer(buffer, index);
-			reset_buffer(buffer);
-			*index = 0;
-		}
-		buffer[*index] = s[j];
+		_putchar(str[count]);
 	}
+	return (count);
 }
-/**
- * format_c - specificer c
- * @valist: valist
- * @buffer: buffer
- * @index: index
- * Return: void
- */
-void format_c(va_list valist, char *buffer, int *index)
-{
-	char s;
 
-	s = va_arg(valist, int);
-	if (*index == 1024)
-	{
-		_write_buffer(buffer, index);
-		reset_buffer(buffer);
-		*index = 0;
-	}
-	buffer[*index] = s;
-	*index += 1;
+/**
+ * print_c - prints a char
+ * @c: char to print
+ * Return: always 1
+ */
+int print_c(va_list c)
+{
+	char ch = (char)va_arg(c, int);
+
+	_putchar(ch);
+	return (1);
 }
