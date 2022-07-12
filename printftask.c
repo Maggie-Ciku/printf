@@ -15,6 +15,7 @@ static int (*check_for_specifiers(const char *format))(va_list)
 		{"s", print_s},
 		{"d", print_d},
 		{"i", print_i},
+		{"b", print_b},
 		{NULL, NULL}
 	};
 	for (i = 0; p[i].t != NULL; i++)
