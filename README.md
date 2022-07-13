@@ -58,8 +58,8 @@
 
 ### Authors
 
-- iAmG-r00t 👾
-- Michael Ndula [@Michaelndula](https://github.com/Michaelndula) 👨‍💻
+-Alex Wambua 
+- Margaret Wanjiru [@Maggie-Ciku](https://github.com/Maggie-Ciku) 👨‍💻
 
 
 ## Tasks
