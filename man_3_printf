@@ -1,4 +1,4 @@
-.TH man 3 "05.10.2021" "7.53" "_printf man page"
+.TH man 3 "27th July 2021" "0.01" "_printf man page"
 .SH NAME
 .B _printf
 - A simple re-creation of the printf function
@@ -19,13 +19,12 @@ To use _printf you have to use the following key characters preceeded by % symbo
 %i: To print integers of max and min size of an int type
 .RS 0
 %b: To print a number in binary form
-.RS 0
-%p: To be used to print  pointer addresses
-.RS 0
-%S: To be used to print non-printable characters
 .SH RETURN VALUES
 The _printf() function returns an integer representing the number of symbols
 printed not counting \\0 for the string.
+.SH SEE ALSO
+.I printf(3)
+.SH BUGS
+No known bugs.
 .SH AUTHOR
-Thulani Moko
-Thandiwe Khalaki
+Peter Numi && Michael Ndula
