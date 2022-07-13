@@ -25,6 +25,7 @@ int print_o(va_list o);
 int print_x(va_list x);
 int print_X(va_list X);
 int print_u(va_list u);
+int _putchar(char c);
 int print_int(va_list arg);
 int print_unsigned(va_list arg);
 int _printf(const char *format, ...);
