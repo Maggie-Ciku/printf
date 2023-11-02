@@ -1,0 +1,291 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Gmail with screen readers
+Enable desktop notifications for Gmail.
+   OK  No thanks
+1 of 648
+Fwd: bot
+Inbox
+
+Alex Mutune
+Attachments
+10:04 PM (7 minutes ago)
+to me
+
+
+---------- Forwarded message ---------
+From: Victor Kimeu <victorkimeu21@gmail.com>
+Date: Thu, 2 Nov 2023, 21:45
+Subject: bot
+To: Alex Mutune <alexmutune746@gmail.com>
+
+
+
+
+ One attachment
+  •  Scanned by Gmail
+
+---
+collection: false
+variables:
+  - type: ''
+    id: j}8O`Vs+RJljIwPu-_:_ 
+    name: Stake
+  - type: ''
+    id: W4$:ZQCmEz#8+=4ysv5Y
+    name: Loss
+  - type: ''
+    id: mXtFswo{p,|%W1:V-$+r
+    name: Target Profit
+  - type: ''
+    id: %L?;380E6Lr^3b.%}t5Q
+    name: stake 2
+block:
+  type: trade
+  id: trade
+  x: -179
+  y: -91
+  MARKET_LIST: synthetic_index
+  SUBMARKET_LIST: random_index
+  SYMBOL_LIST: R_100
+  TRADETYPECAT_LIST: digits
+  TRADETYPE_LIST: overunder
+  TYPE_LIST: both
+  CANDLEINTERVAL_LIST: '60'
+  TIME_MACHINE_ENABLED: FALSE
+  RESTARTONERROR: TRUE
+  INITIALIZATION:
+    - type: text_print
+      id: EDivDExvOQkw/~i;V+j8
+      collapsed: true
+      TEXT:
+        type: text
+        id: kv+MPF!f)#C[?TCT^dS(
+        TEXT: 'About To Print Dollars 💵 All The Best'
+      next:
+        - type: variables_set
+          id: IpH/OKA3R.E;dEgGMbf,
+          VAR: Loss
+          VALUE:
+            type: math_number
+            id: =XFKCMq#6s#Mo6`~.@`0
+            NUM: 1000
+          next:
+            - type: variables_set
+              id: {_clcmJ(*gEi!Br8c}kM
+              VAR: Target Profit
+              VALUE:
+                type: math_number
+                id: q}((XO%dDMm1RXxPNqt#
+                NUM: 607
+              next:
+                - type: variables_set
+                  id: )ZZGf^cT0rOqa/Ma%NC]
+                  VAR: Stake
+                  VALUE:
+                    type: math_number
+                    id: YHAI}G~p-MzbG{Q#}HYP
+                    NUM: 2
+                  next:
+                    - type: variables_set
+                      id: su0Gc91D[(`K},Nk5p|N
+                      VAR: stake 2
+                      VALUE:
+                        type: math_number
+                        id: MFliyze83ZUSaeqHp]Qd
+                        NUM: 2
+  SUBMARKET:
+    - type: tradeOptions
+      id: e9H9Aque*t_l]hki@?v1
+      DURATIONTYPE_LIST: t
+      CURRENCY_LIST: USD
+      DURATION:
+        type: math_number
+        id: ~G^:]=.b`!T9.Il_vkLS
+        NUM: 1
+      AMOUNT:
+        type: variables_get
+        id: U7j6VStMd;ipx]Ouc..l
+        VAR: Stake
+      PREDICTION:
+        type: math_number
+        id: {YT=XO|U{a-apmE95(ke
+        NUM: 5
+block_1:
+  type: math_number
+  id: Urs($9?z{cv3$r5~rxum
+  disabled: true
+  x: 194
+  y: 497
+  NUM: 5
+block_2:
+  type: text
+  id: 3mdAU?=Tbm-T@3=*EqH$
+  collapsed: true
+  disabled: true
+  x: 2
+  y: 538
+  TEXT: 'Expert  Speed Bot'
+block_3:
+  type: during_purchase
+  id: 4/HZDK).D8=^Cv4C^vT4
+  collapsed: true
+  x: 0
+  y: 595
+block_4:
+  type: after_purchase
+  id: finish
+  x: 0
+  y: 648
+  AFTERPURCHASE_STACK:
+    - type: controls_if
+      id: a!_WKGNJh,yQ}tk|:`NI
+      else: 1
+      IF0:
+        - type: contract_check_result
+          id: O1ON.Ffb1!6t,P`iFZ]!
+          CHECK_RESULT: win
+      DO0:
+        - type: notify
+          id: zw:P~.RrRR4@/[ZDu;Cc
+          NOTIFICATION_TYPE: success
+          NOTIFICATION_SOUND: silent
+          MESSAGE:
+            type: text_join
+            id: 6v3if%7]E52#?`jFIB!f
+            items: 2
+            ADD0:
+              type: text
+              id: ODDvC.!;oC7lFi#W0*kB
+              TEXT: 'Ganhou: '
+            ADD1:
+              type: read_details
+              id: KzeETsb#x.wDkbkAPd=}
+              DETAIL_INDEX: 4
+          next:
+            - type: variables_set
+              id: *k@},WThq4c@/K_{kF%
+              VAR: Stake
+              VALUE:
+                type: variables_get
+                id: zaeP]S1q0DLSb08yz]+4
+                VAR: stake 2
+      ELSE:
+        - type: notify
+          id: %oq)w)m2-uXUJwDkEX3r
+          NOTIFICATION_TYPE: warn
+          NOTIFICATION_SOUND: silent
+          MESSAGE:
+            type: text_join
+            id: kRD-eN4Qav7`u.gQ(tkn
+            items: 2
+            ADD0:
+              type: text
+              id: _u}p#WG2-0R,3wmR::e7
+              TEXT: 'Perdeu: '
+            ADD1:
+              type: math_single
+              id: WC8^:q6MT;.=}juq3~w+
+              OP: ABS
+              NUM:
+                type: read_details
+                id: [6yQUMvdZh#*SBr)o1Lf
+                DETAIL_INDEX: 4
+          next:
+            - type: math_change
+              id: szxi%pOMsEZiNe!@=`z_
+              VAR: Stake
+              DELTA:
+                type: math_arithmetic
+                id: L|Yp}u1YlBQ9k78`pWjV
+                OP: MULTIPLY
+                A:
+                  type: math_single
+                  id: FX_=g~%((pbM8DTsJlMU
+                  OP: ABS
+                  NUM:
+                    type: read_details
+                    id: [6yQUMvdZh#*SBr)o1Lf
+                    DETAIL_INDEX: 4
+                B:
+                  type: math_number
+                  id: `QKav=/U4)}^__0!o_(c
+                  NUM: 1
+          next:
+            - type: controls_if
+              id: mu#-HM%oPx={kJ=fV8=|
+              else: 1
+              IF0:
+                - type: logic_compare
+                  id: dNs]t(GyzgglM,XMTDvb
+                  OP: GTE
+                  A:
+                    type: math_single
+                    id: a0@ts-ulSz~m0[mw87ir
+                    OP: ABS
+                    NUM:
+                      type: read_details
+                      id: A/Hs,Vny^(7-mM{:InU[
+                      DETAIL_INDEX: 4
+                  B:
+                    type: variables_get
+                    id: HeD6}Fq/mG)kOI1]*44[
+                    VAR: Loss
+                DO0:
+                  - type: variables_set
+                    id: u:oJzS]FEYpy9ypI3bD*
+                    VAR: Stake
+                    VALUE:
+                      type: variables_get
+                      id: ),(#N=,PVUQl!wgt-~4i
+                      VAR: stake 2
+              next:
+                - type: notify
+                  id: ]fc2SUtM2UzE|=Tzpy}S
+                  NOTIFICATION_TYPE: info
+                  NOTIFICATION_SOUND: silent
+                  MESSAGE:
+                    type: text_join
+                    id: *!(=c%67H[//(y{YBgZy
+                    items: 2
+                    ADD0:
+                      type: text
+                      id: [69Ue}W}MaCF*BU#294_
+                      TEXT: 'Total Profit: '
+                    ADD1:
+                      type: total_profit
+                      id: }*H,Z~xMxuNBTwVTv4*{
+                  next:
+                    - type: controls_if
+                      id: Su2G{`dLNbP}g7q=]!p)
+                      else: 1
+                      IF0:
+                        - type: logic_compare
+                          id: N^U?{:24gAXhqr=~#}={
+                          OP: LT
+                          A:
+                            type: total_profit
+                            id: %wR%e|eExAHt5W:,kAsm
+                          B:
+                            type: variables_get
+                            id: ,F_S*,CaK.}p}MS{#)eG
+                            VAR: Target Profit
+                        DO0:
+                          - type: trade_again
+                            id: WlL(Yr4%r-~ea4QwP#Nm
+                        ELSE:
+                          - type: text_print
+                            id: Flww-KT}T1+c~bF:^cMb
+                            TEXT:
+                              type: text_join
+                              id: _3~!q2F=HY|q(Kdb^m9l
+                              items: 2
+                              ADD0:
+                                type: text
+                                id: Gg@4VoMw!c3UbQ[:@PB.
+                                TEXT: 'Dollars Printed Successfully : '
+                              ADD1:
+                                type: total_profit
+                                id: O:MYUukPm?_m(w65eRd?
